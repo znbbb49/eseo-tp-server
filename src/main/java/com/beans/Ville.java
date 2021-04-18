@@ -1,23 +1,30 @@
 package com.beans;
 
 
+
 public class Ville {
 	
 	private String codeCommune ;
 	private String nomCommune ;
 	private String codePostal ;
-	private String lattitute ;
+	private String latitude ;
 	private String longitude ;
+	private String libelleAcheminement ;
+	private String ligne ;
 	
+	public Ville() {
+		super();
+	}
 	
-	
-	public Ville(String codeCommune, String nomCommune, String codePostal, String lattitute, String longitude) {
+	public Ville(String codeCommune, String nomCommune, String codePostal, String latitude, String longitude, String libelleAcheminement, String ligne) {
 		super();
 		this.codeCommune = codeCommune;
 		this.nomCommune = nomCommune;
 		this.codePostal = codePostal;
-		this.lattitute = lattitute;
+		this.latitude = latitude;
 		this.longitude = longitude;
+		this.libelleAcheminement = libelleAcheminement ;
+		this.ligne = ligne ;
 	}
 	public String getCodeCommune() {
 		return codeCommune;
@@ -37,11 +44,11 @@ public class Ville {
 	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
-	public String getLattitute() {
-		return lattitute;
+	public String getlatitude() {
+		return latitude;
 	}
-	public void setLattitute(String lattitute) {
-		this.lattitute = lattitute;
+	public void setlatitude(String latitude) {
+		this.latitude = latitude;
 	}
 	public String getLongitude() {
 		return longitude;
@@ -49,11 +56,32 @@ public class Ville {
 	public void setLongitude(String longitude) {
 		this.longitude = longitude;
 	}
+	
+
+	public String getLibelleAcheminement() {
+		return libelleAcheminement;
+	}
+
+	public void setLibelleAcheminement(String libelleAcheminement) {
+		this.libelleAcheminement = libelleAcheminement;
+	}
+
+	public String getLigne() {
+		return ligne;
+	}
+
+	public void setLigne(String ligne) {
+		this.ligne = ligne;
+	}
+
 	@Override
 	public String toString() {
 		return "Ville [codeCommune=" + codeCommune + ", nomCommune=" + nomCommune + ", codePostal=" + codePostal
-				+ ", lattitute=" + lattitute + ", longitude=" + longitude + "]";
+				+ ", latitude=" + latitude + ", longitude=" + longitude + ", libelleAcheminement="
+				+ libelleAcheminement + ", ligne=" + ligne + "]";
 	}
+	
+	
 	
 	
 	
