@@ -36,9 +36,12 @@ public class VilleDAOImpl implements VilleDAO {
 		}
 		finally {
 			
-			stmt.close();
-			rs.close();
-			con.close();
+			if (stmt != null)
+				stmt.close();
+			if (rs != null)
+				rs.close();
+			if (con != null)
+				con.close();
 		}
 		return villes;
 	}
@@ -64,10 +67,14 @@ public class VilleDAOImpl implements VilleDAO {
 			
 		}
 finally {
-			
-			stmt.close();
-			rs.close();
-			con.close();
+	
+	if (stmt != null)
+		stmt.close();
+	if (rs != null)
+		rs.close();
+	if (con != null)
+		con.close();
+		
 		}
 		return villes;
 
@@ -90,8 +97,10 @@ finally {
 		}
 		finally {
 			
-			stmt.close();
-			con.close();
+			if (stmt != null)
+				stmt.close();
+			if (con != null)
+				con.close();
 		}
 		
 		
@@ -112,8 +121,10 @@ finally {
 		}
 		finally {
 			
-			stmt.close();
-			con.close();
+			if (stmt != null)
+				stmt.close();
+			if (con != null)
+				con.close();
 		}
 	
 	}
@@ -134,8 +145,10 @@ finally {
 					}
 		finally {
 			
-			stmt.close();
-			con.close();
+			if (stmt != null)
+				stmt.close();
+			if (con != null)
+				con.close();
 		}
 	}
 }
