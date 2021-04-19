@@ -30,19 +30,17 @@ public class VilleDAOImpl implements VilleDAO {
 				ville = new Ville(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(6),rs.getString(7),rs.getString(4),rs.getString(5));
 				villes.add(ville);
 			}
-			//con.close();
+			
 		} catch (SQLException e) {
+			e.printStackTrace();
 			
 		}
 		finally {
 			
-			if (stmt != null)
-				stmt.close();
-			if (rs != null)
-				rs.close();
-			if (con != null)
-				con.close();
-		}
+			try { if (rs != null) rs.close(); } catch (Exception e) {};
+		    try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+		    con.close();}
+		
 		return villes;
 	}
 
@@ -63,19 +61,16 @@ public class VilleDAOImpl implements VilleDAO {
 			}
 			
 		} catch (SQLException e) {
+			e.printStackTrace();
 			
 			
 		}
 finally {
 	
-	if (stmt != null)
-		stmt.close();
-	if (rs != null)
-		rs.close();
-	if (con != null)
-		con.close();
+	try { if (rs != null) rs.close(); } catch (Exception e) {};
+    try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+    con.close();}
 		
-		}
 		return villes;
 
 	}
@@ -93,15 +88,14 @@ finally {
 				
 					
 		} catch (SQLException e) {
+			e.printStackTrace();
 			
 		}
 		finally {
-			
-			if (stmt != null)
-				stmt.close();
-			if (con != null)
-				con.close();
-		}
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+		    try { if (con != null) con.close(); } catch (Exception e) {};
+		    con.close();}
+		
 		
 		
 	}
@@ -121,11 +115,9 @@ finally {
 		}
 		finally {
 			
-			if (stmt != null)
-				stmt.close();
-			if (con != null)
-				con.close();
-		}
+				try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+			    try { if (con != null) con.close(); } catch (Exception e) {};
+			    con.close();}
 	
 	}
 
@@ -144,11 +136,8 @@ finally {
 		} catch (SQLException e) {
 					}
 		finally {
-			
-			if (stmt != null)
-				stmt.close();
-			if (con != null)
-				con.close();
-		}
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+		    try { if (con != null) con.close(); } catch (Exception e) {};
+		    con.close();}
 	}
 }
