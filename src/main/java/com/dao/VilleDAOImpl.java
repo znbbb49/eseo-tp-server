@@ -15,6 +15,9 @@ import com.config.JDBCConfiguration;
 
 @Repository
 public class VilleDAOImpl implements VilleDAO {
+	
+	String erreur = "erreur" ;
+	
 	public ArrayList<Ville> getInfoVille() throws SQLException  {
 		Ville ville = null;
 		ArrayList<Ville> villes = new ArrayList<>();
@@ -37,8 +40,8 @@ public class VilleDAOImpl implements VilleDAO {
 		}
 		finally {
 			
-			try { if (rs != null) rs.close(); } catch (Exception e) {System.out.println("Erreur");};
-		    try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
+			try { if (rs != null) rs.close(); } catch (Exception e) {System.out.println(erreur);};
+		    try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(erreur);};
 		    con.close();}
 		
 		return villes;
@@ -67,8 +70,8 @@ public class VilleDAOImpl implements VilleDAO {
 		}
 finally {
 	
-	try { if (rs != null) rs.close(); } catch (Exception e) {System.out.println("Erreur");};
-    try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
+	try { if (rs != null) rs.close(); } catch (Exception e) {System.out.println(erreur);};
+    try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(erreur);};
     con.close();}
 		
 		return villes;
@@ -92,8 +95,8 @@ finally {
 			
 		}
 		finally {
-			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
-		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(erreur);};
+		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println(erreur);};
 		    }
 		
 		
@@ -115,8 +118,8 @@ finally {
 		}
 		finally {
 			
-				try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
-			    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
+				try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(erreur);};
+			    try { if (con != null) con.close(); } catch (Exception e) {System.out.println(erreur);};
 			    }
 	
 	}
@@ -136,8 +139,8 @@ finally {
 		} catch (SQLException e) {
 			System.out.println("Erreur dans la modif");	}
 		finally {
-			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
-		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println(erreur);};
+		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println(erreur);};
 		    }
 	}
 }
