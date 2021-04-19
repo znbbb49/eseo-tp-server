@@ -84,7 +84,7 @@ finally {
 			stmt = con.createStatement();
 	
 		   	stmt.executeUpdate("INSERT INTO `ville_france`(`Code_commune_INSEE`, `Nom_commune`, `Code_postal`, `Libelle_acheminement`, `Ligne_5`, `Latitude`, `Longitude`) VALUES ('"+ville.getCodeCommune()+"','"+ville.getNomCommune()+"','"+ville.getCodePostal()+"','"+ville.getLibelleAcheminement()+"','"+ville.getLigne()+"','"+ville.getlatitude()+"','"+ville.getLongitude()+"')");	
-			con.close();
+			
 				
 					
 		} catch (SQLException e) {
@@ -94,7 +94,7 @@ finally {
 		finally {
 			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
 		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
-		    con.close();}
+		    }
 		
 		
 		
@@ -117,7 +117,7 @@ finally {
 			
 				try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
 			    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
-			    con.close();}
+			    }
 	
 	}
 
@@ -138,6 +138,6 @@ finally {
 		finally {
 			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
 		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
-		    con.close();}
+		    }
 	}
 }
