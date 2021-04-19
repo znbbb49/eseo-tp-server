@@ -32,13 +32,13 @@ public class VilleDAOImpl implements VilleDAO {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			return null ;
 			
 		}
 		finally {
 			
-			try { if (rs != null) rs.close(); } catch (Exception e) {};
-		    try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+			try { if (rs != null) rs.close(); } catch (Exception e) {System.out.println("Erreur");};
+		    try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
 		    con.close();}
 		
 		return villes;
@@ -61,14 +61,14 @@ public class VilleDAOImpl implements VilleDAO {
 			}
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			return null ;
 			
 			
 		}
 finally {
 	
-	try { if (rs != null) rs.close(); } catch (Exception e) {};
-    try { if (stmt != null) stmt.close(); } catch (Exception e) {};
+	try { if (rs != null) rs.close(); } catch (Exception e) {System.out.println("Erreur");};
+    try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
     con.close();}
 		
 		return villes;
@@ -88,12 +88,12 @@ finally {
 				
 					
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Erreur dans l'ajout");
 			
 		}
 		finally {
-			try { if (stmt != null) stmt.close(); } catch (Exception e) {};
-		    try { if (con != null) con.close(); } catch (Exception e) {};
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
+		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
 		    con.close();}
 		
 		
@@ -111,12 +111,12 @@ finally {
 			stmt = con.createStatement();
 			stmt.executeUpdate("DELETE FROM ville_france WHERE Code_commune_INSEE = '" + code + "'");
 		} catch (SQLException e) {
-			
+			System.out.println("Erreur dans la suppression");
 		}
 		finally {
 			
-				try { if (stmt != null) stmt.close(); } catch (Exception e) {};
-			    try { if (con != null) con.close(); } catch (Exception e) {};
+				try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
+			    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
 			    con.close();}
 	
 	}
@@ -134,10 +134,10 @@ finally {
 					+ "', Ligne_5 = '" + ville.getLigne() + "', Latitude='" + ville.getlatitude() + "', Longitude='"
 					+ ville.getLongitude() + "'  WHERE Code_commune_INSEE='" + ville.getCodeCommune() + "'");
 		} catch (SQLException e) {
-					}
+			System.out.println("Erreur dans la modif");	}
 		finally {
-			try { if (stmt != null) stmt.close(); } catch (Exception e) {};
-		    try { if (con != null) con.close(); } catch (Exception e) {};
+			try { if (stmt != null) stmt.close(); } catch (Exception e) {System.out.println("Erreur");};
+		    try { if (con != null) con.close(); } catch (Exception e) {System.out.println("Erreur");};
 		    con.close();}
 	}
 }
